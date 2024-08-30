@@ -19,4 +19,5 @@ SELECT 275 , 2006 , '1429000.00'
 UNION ALL
 SELECT 275 , 2006 ,  '1324000.00'
 
+--solution1
 SELECT *, LAG(CurrentQuota, 1, 0) over(order by (select null)) as lagCurrentData from lag
