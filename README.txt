@@ -1,0 +1,1 @@
+This repository contains solutions for 500 SQL Puzzles from https://msbiskills.com/tsql-puzzles-asked-in-interview-over-the-years/
