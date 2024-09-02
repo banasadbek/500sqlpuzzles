@@ -39,5 +39,5 @@ from (select
 	  from NthHighest) as salaries_ranked
 where salary_rank = 2
 
---we need to name our subqueries as they are temporary tables standard sql has to refer in queue
+--we need to name our subqueries as they are temporary tables standard sql has to refer in query
 
