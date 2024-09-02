@@ -30,18 +30,14 @@ offset 1 rows
 fetch next 1 rows only
 
 --solution2
-declare @nth int
+select name,
+	salary
+from (select 
+			name,
+			salary,
+			row_number() over(order by salary desc) as salary_rank
+	  from NthHighest) as salaries_ranked
+where salary_rank = 2
 
-create procedure uspnthhighestsalary @nth int
-as begin
-	select name,
-		salary
-	from NthHighest
-	order by salary desc
-	offset @nth-1 rows
-	fetch next 1 rows only
-end;
-
-exec uspnthhighestsalary 2
-
+--we need to name our subqueries as they are temporary tables standard sql has to refer in queue
 
