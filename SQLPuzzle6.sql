@@ -32,11 +32,9 @@ fetch next 1 rows only
 --solution2
 select name,
 	salary
-from (select 
-			name,
-			salary,
-			row_number() over(order by salary desc) as salary_rank
-	  from NthHighest) as salaries_ranked
+from (select name, salary,
+	row_number() over(order by salary desc) as salary_rank
+	from NthHighest) as salaries_ranked
 where salary_rank = 2
 
 --we need to name our subqueries as they are temporary tables standard sql has to refer in query
